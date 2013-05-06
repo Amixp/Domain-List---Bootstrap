@@ -12,6 +12,5 @@ while($result = mysql_fetch_array($query)){
         
     ';
 }
-	</script>';
 include('./templates/default/index.php');
 ?>
