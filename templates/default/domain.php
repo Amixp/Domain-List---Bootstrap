@@ -15,9 +15,9 @@
     
 <?php	
 $domain = $_GET['domain'];
-$domain_mx = dns_get_record("bcarlsonmedia.com", DNS_MX);
-$domain_cname = dns_get_record("bcarlsonmedia.com", DNS_CNAME);
-$domain_ns = dns_get_record("bcarlsonmedia.com", DNS_NS);
+$domain_mx = dns_get_record("$domain", DNS_MX);
+$domain_ns = dns_get_record("$domain", DNS_NS);
+
 ;
 ?>
     
@@ -32,14 +32,11 @@ $domain_ns = dns_get_record("bcarlsonmedia.com", DNS_NS);
 </div>
 
 <div class="container content">
-	<table class="table table-striped table-condensed">
-		<thead>
-		<tr>
-			<th id="$ips">Domain</th>
-			<th id="$value">A - IP Address</th>
-		</tr>
-</thead>
-    
+<table class="table table-striped table-condensed">   
+<tr>
+	<th id="$ips">Domain</th>
+</tr>
+
 <tbody>
 <tr>
 <td>
@@ -48,6 +45,10 @@ $domain_ns = dns_get_record("bcarlsonmedia.com", DNS_NS);
 	echo $domain;
 	?>
 </td>
+<tr>
+<th id="$value">A - IP Address</th>
+</tr>
+<tr>
 <td>
 	<?php	
 	foreach ($ips as $ip => $value){
@@ -55,441 +56,12 @@ $domain_ns = dns_get_record("bcarlsonmedia.com", DNS_NS);
 	}
 	?>	
 </td>	
-<tr>
-	<th id="$ips">Domain</th>
-	<th id="$value">MX Records</th>
 </tr>
+
 <tr>
-<td>
-	<?php
-	if (empty ($domain_mx[0]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_mx[0]['target'])) { }
-	else {
-	echo $domain_mx[0]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_mx[1]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_mx[1]['target'])) { }
-	else {
-	echo $domain_mx[1]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_mx[2]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_mx[2]['target'])) { }
-	else {
-	echo $domain_mx[2]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_mx[3]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_mx[3]['target'])) { }
-	else {
-	echo $domain_mx[3]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_mx[4]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_mx[4]['target'])) { }
-	else {
-	echo $domain_mx[4]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_mx[5]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_mx[5]['target'])) { }
-	else {
-	echo $domain_mx[5]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_mx[6]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_mx[6]['target'])) { }
-	else {
-	echo $domain_mx[6]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-	<th id="$ips">Domain</th>
-	<th id="$value">CNAME Records</th>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[0]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[0]['target'])) { }
-	else {
-	echo $domain_cname[0]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[1]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[1]['target'])) { }
-	else {
-	echo $domain_cname[1]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[2]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[2]['target'])) { }
-	else {
-	echo $domain_cname[2]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[3]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[3]['target'])) { }
-	else {
-	echo $domain_cname[3]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[4]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[4]['target'])) { }
-	else {
-	echo $domain_cname[4]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[5]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[5]['target'])) { }
-	else {
-	echo $domain_cname[5]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[6]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[6]['target'])) { }
-	else {
-	echo $domain_cname[6]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[7]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[7]['target'])) { }
-	else {
-	echo $domain_cname[7]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[8]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[8]['target'])) { }
-	else {
-	echo $domain_cname[8]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[9]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[9]['target'])) { }
-	else {
-	echo $domain_cname[9]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[10]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[10]['target'])) { }
-	else {
-	echo $domain_cname[10]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[10]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[10]['target'])) { }
-	else {
-	echo $domain_cname[10]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[11]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[11]['target'])) { }
-	else {
-	echo $domain_cname[11]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[12]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[12]['target'])) { }
-	else {
-	echo $domain_cname[12]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[13]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[13]['target'])) { }
-	else {
-	echo $domain_cname[13]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-<td>
-	<?php
-	if (empty ($domain_cname[14]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_cname[14]['target'])) { }
-	else {
-	echo $domain_cname[14]['target'];
-	}
-	?>
-</td>
-</tr>
-<tr>
-	<th id="$ips">Domain</th>
 	<th id="$value">NS Records</th>
 </tr>
 <tr>
-<td>
-	<?php
-	if (empty ($domain_ns[0]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
 <td>
 	<?php
 	if (empty ($domain_ns[0]['target'])) { }
@@ -504,28 +76,12 @@ $domain_ns = dns_get_record("bcarlsonmedia.com", DNS_NS);
 	<?php
 	if (empty ($domain_ns[1]['target'])) { }
 	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_ns[1]['target'])) { }
-	else {
 	echo $domain_ns[1]['target'];
 	}
 	?>
 </td>
 </tr>
 <tr>
-<td>
-	<?php
-	if (empty ($domain_ns[2]['target'])) { }
-	else {
-	echo $domain;
-	}
-	?>
-</td>
 <td>
 	<?php
 	if (empty ($domain_ns[2]['target'])) { }
@@ -540,14 +96,6 @@ $domain_ns = dns_get_record("bcarlsonmedia.com", DNS_NS);
 	<?php
 	if (empty ($domain_ns[3]['target'])) { }
 	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_ns[3]['target'])) { }
-	else {
 	echo $domain_ns[3]['target'];
 	}
 	?>
@@ -558,19 +106,95 @@ $domain_ns = dns_get_record("bcarlsonmedia.com", DNS_NS);
 	<?php
 	if (empty ($domain_ns[4]['target'])) { }
 	else {
-	echo $domain;
-	}
-	?>
-</td>
-<td>
-	<?php
-	if (empty ($domain_ns[4]['target'])) { }
-	else {
 	echo $domain_ns[4]['target'];
 	}
 	?>
 </td>
+</tr>	
+<tr>
+	<th id="$value">MX Records</th>
 </tr>
+<tr>
+<td>
+	<?php
+	if (empty ($domain_mx[0]['target'])) { }
+	else {
+	echo $domain_mx[0]['target'];
+	}
+	?>
+</td>
+</tr>
+<tr>
+<td>
+	<?php
+	if (empty ($domain_mx[1]['target'])) { }
+	else {
+	echo $domain_mx[1]['target'];
+	}
+	?>
+</td>
+</tr>
+<tr>
+<td>
+	<?php
+	if (empty ($domain_mx[1]['target'])) { }
+	else {
+	echo $domain_mx[1]['target'];
+	}
+	?>
+</td>
+</tr>
+<tr>
+<td>
+	<?php
+	if (empty ($domain_mx[1]['target'])) { }
+	else {
+	echo $domain_mx[1]['target'];
+	}
+	?>
+</td>
+</tr>
+<tr>
+<td>
+	<?php
+	if (empty ($domain_mx[2]['target'])) { }
+	else {
+	echo $domain_mx[2]['target'];
+	}
+	?>
+</td>
+</tr>
+<tr>
+<td>
+	<?php
+	if (empty ($domain_mx[3]['target'])) { }
+	else {
+	echo $domain_mx[3]['target'];
+	}
+	?>
+</td>
+</tr>
+<tr>
+<td>
+	<?php
+	if (empty ($domain_mx[4]['target'])) { }
+	else {
+	echo $domain_mx[4]['target'];
+	}
+	?>
+</td>
+</tr>
+<td>
+	<?php
+	if (empty ($domain_mx[5]['target'])) { }
+	else {
+	echo $domain_mx[5]['target'];
+	}
+	?>
+</td>
+</tr>
+
+
 
 <?php echo $sTable; ?>
 </tbody>
