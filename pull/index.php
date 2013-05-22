@@ -18,17 +18,7 @@ if(is_numeric($sId)){
 	$output = get_data($url);
 	if(($output == NULL) || ($output === false)){
 		$array = array();
-		$array['uptime'] = '
-		<div class="progress">
-			<div class="bar bar-danger" style="width: 100%;"><small>Down</small></div>
-		</div>
-		';
-		$array['load'] = '
-		<div class="progress">
-			<div class="bar bar-danger" style="width: 100%;"><small>Down</small></div>
-		</div>
-		';
-		$array['online'] = '
+		$array['uptime'] = $array['load'] = $array['online'] = '
 		<div class="progress">
 			<div class="bar bar-danger" style="width: 100%;"><small>Down</small></div>
 		</div>
