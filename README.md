@@ -1,11 +1,11 @@
-# Domain List - Bootstrap
+Domain List - Bootstrap
 ============
 
 Domain List is based off [BlueVM's](http://uptime.bluevm.com/) Uptime Checker script, [original download and information](http://www.lowendtalk.com/discussion/comment/169690#Comment_169690).
 
 It uses Bootstrap for theming.
 
-# Installation
+Installation
 ============
 
 1. Create a database with a user.
@@ -17,7 +17,7 @@ It uses Bootstrap for theming.
   * exdate - Expiration Date for Registration
   * Host - Where's it hosted?
 
-# Requirements
+Requirements
 ============
 
 **Master Server**:
